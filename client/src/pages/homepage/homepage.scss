@@ -1,0 +1,51 @@
+.background__map {
+    background-image: url("../../images/worldmap.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50vw;
+    width: 100vw;
+    background-color: lemonchiffon;
+}
+
+.image {
+
+    &__canada {
+        box-sizing: border-box;
+        height: 1rem;
+        position: relative;
+        top: 8vw;
+        left: 15vw;
+    }
+
+    &__china {
+        box-sizing: border-box;
+        height: 1rem;
+        position: relative;
+        top: 12vw;
+        left: 66vw;
+    }
+
+    &__europe {
+        box-sizing: border-box;
+        height: 1rem;
+        position: relative;
+        top: 12vw;
+        left: 38vw;
+    }
+
+    &__uk {
+        box-sizing: border-box;
+        height: 1rem;
+        position: relative;
+        top: 4vw;
+        left: 38vw;
+    }
+
+    &__us {
+        box-sizing: border-box;
+        height: 1rem;
+        position: relative;
+        top: 12vw;
+        left: 15vw;
+    }
+}
