@@ -13,19 +13,12 @@ const flagImages = {
     EUR: Europe,
     GBP: UK,
     USD: UnitedStates,
-
 }
-
-
-
 const Homepage = () => {
-
     const [currency, setCurrency] = useState(null);
     const [amountSaved, setAmountSaved] = useState(0);
     const [selectedCurrency, setSelectedCurrency] = useState("USD")
-
     useEffect(() => {
-
         const getCurrency = async () => {
             try {
                 const { data } = await axios.get(`http://localhost:8080/currency-usd`)
@@ -40,7 +33,6 @@ const Homepage = () => {
     const handleAmountChange = (event) => {
         setAmountSaved(event.target.value);
     }
-
     const handleCurrencyChange = (event) => {
         setSelectedCurrency(event.target.value);
     }
@@ -54,8 +46,6 @@ const Homepage = () => {
     const handleFlagClick = (currencyCode) => {
         setSelectedCurrency(currencyCode);
     }
-
-
     return (
         <>
             <p className="description" >
@@ -65,8 +55,6 @@ const Homepage = () => {
                 for the world traveller.
             </p>
             <div className=" background__map">
-
-
                 {Object.keys(flagImages).map((currencyCode) => (
                     <div key={currencyCode} className={`country__${currencyCode.toLowerCase()}`}>
                         <img
@@ -77,13 +65,7 @@ const Homepage = () => {
                         />
                     </div>
                 ))}
-
             </div>
-
-            <div className="api-container">
-                { currency && currency.conversion_rates && (
-                    <p>Euros are equal to {currency.conversion_rates.EUR} USD</p>
-                ) }
             <div className="converter__container">
                 <div className="converter">
                     <input
@@ -93,7 +75,6 @@ const Homepage = () => {
                         onChange={handleAmountChange}
                         placeholder="Enter your savings!"
                     />
-
                     <div className="selected-flag"> { }  </div>
                     {/* <select value={selectedCurrency} onChange={handleCurrencyChange}>
                         {currency && currency.conversion_rates && Object.keys(currency.conversion_rates).map((currencyCode) => (
@@ -102,18 +83,38 @@ const Homepage = () => {
                             </option>
                         ))}
                     </select> */}
-
                     <p>
                         {amountSaved} USD is equal to {convertAmount()} {selectedCurrency}
                     </p>
-
                 </div>
             </div>
         </>
-
-
     )
-
 }
-
 export default Homepage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
