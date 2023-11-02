@@ -40,7 +40,7 @@ const Homepage = () => {
         const getCountryCode = async () => {
             try {
                 const { data } = await axios.get(`http://localhost:8080/country/${cca3}`);
-                console.log(data);
+
                 setCountryData(data)
             } catch (error) {
                 console.log(error)
@@ -152,19 +152,20 @@ const Homepage = () => {
                         </p>
                     </div>
                 </div>
-                <section className="description">
-                    <h3 className="converter__calc--title">Happy Travelling!</h3>
+                {countryData.countryName && (
+                    <section className="description">
+                        <h3 className="converter__calc--title">Happy Travelling!</h3>
 
-                    <h4 className="description__title">Lets find out more about {countryData.countryName}!</h4>
-                    <p>Capital City: Our capital city is {countryData.capitol} </p>
-                    <p>Population: We have {countryData.population} people</p>
-                    <p>Flag: {countryData.flag} </p>
-                    <p>Currency: {countryData.currency[selectedCurrency].symbol} </p>
-                    <p>Where do you drive?: We drive on the <b>{countryData.roadSide}</b> side of the road. </p>
-                    {/* <p>Waht do they speak?: {countryData.languages}</p> */}
+                        <h4 className="description__title">Lets find out more about {countryData.countryName}!</h4>
+                        <p>Capital City: Our capital city is {countryData.capitol} </p>
+                        <p>Population: We have {countryData.population} people</p>
+                        <p>Flag: {countryData.flag} </p>
+                        {/* <p>Currency: {countryData.currency[selectedCurrency].name} </p> */}
+                        <p>Where do you drive?: We drive on the <b>{countryData.roadSide}</b> side of the road. </p>
+                        {/* <p>What do they speak?: {countryData.languages}</p> */}
 
-                </section>
-
+                    </section>
+                )}
             </main >
 
         </>
