@@ -89,10 +89,10 @@ const Homepage = () => {
                     <h3>You're Savings:</h3>
                     <input
                         className="converter__input"
-                        type="number"
+                        // type="number"
                         value={amountSaved}
                         onChange={handleAmountChange}
-                        placeholder="Enter your savings!"
+                        placeholder="Enter here!"
                     />
 
                     <div className="converter__flag"> { }  </div>
@@ -103,9 +103,9 @@ const Homepage = () => {
                             </option>
                         ))}
                     </select> */}
-
+                    <h3 className="converter__calc--title">Happy Travelling!</h3>
                     <p className="converter__calc">
-                        &#36;{amountSaved} USD is equal to {convertAmount()} {selectedCurrency}
+                        Your &#36;{amountSaved} USD is equal to {convertAmount()} {selectedCurrency}!
                     </p>
 
                 </div>
