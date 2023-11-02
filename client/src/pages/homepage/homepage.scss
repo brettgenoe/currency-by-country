@@ -8,11 +8,11 @@
         background-color: rgb(229, 247, 209);
 
         @include tablet {
-            padding: (5% 10% 5% 10%);
+            padding: (5% 10% 1% 10%);
         }
 
         @include desktop {
-            padding: (5% 12.5% 5% 12.5%);
+            padding: (5% 12.5% 1% 12.5%);
         }
     }
 
@@ -426,12 +426,17 @@
             font-size: 2rem;
             font-family: cursive;
             padding-bottom: 1rem;
+
+            @include tablet {
+                font-size: 3rem;
+                padding-bottom: 1rem;
+                padding-top: 1rem;
+            }
         }
     }
 }
 
 .description {
-    // text-align: center;
     padding-left: 5%;
 
     &__title {
