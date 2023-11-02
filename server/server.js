@@ -7,24 +7,24 @@ const path = require("path");
 // const { v4: uuid } = require("uuid");
 app.use(express.json());
 
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "http://localhost:3001" }));
 
 
-app.get("/currency-usd", async (req, res) => {
+// app.get("/currency-usd", async (req, res) => {
 
-    url = "https://v6.exchangerate-api.com/v6/54d79f5447761709d2c1ff6b/latest/USD"
-    try{
+//     url = "https://v6.exchangerate-api.com/v6/54d79f5447761709d2c1ff6b/latest/USD"
+//     try {
 
-        const response = await axios.get(`${url}`);
-        const currencyData = response.data;
-        // const parsedCurrencyData = JSON.parse(currencyData);
-        res.json(currencyData);
+//         const response = await axios.get(`${url}`);
+//         const currencyData = response.data;
+//         // const parsedCurrencyData = JSON.parse(currencyData);
+//         res.json(currencyData);
 
-    } catch (error) {
+//     } catch (error) {
 
-        res.status(500).json({ error: "failed to fetch data" });
-    }
-});
+//         res.status(500).json({ error: "failed to fetch data" });
+//     }
+// });
 
 
 app.get("/country-data", async (req, res) => {
@@ -37,7 +37,7 @@ app.get("/country-data", async (req, res) => {
         res.json(countryData);
 
     } catch (error) {
-    res.status(500).json({ error: "failed to fetch data" });
+        res.status(500).json({ error: "failed to fetch data" });
 
     }
 });
@@ -52,7 +52,7 @@ app.get("/country/:cca3", async (req, res) => {
         const response = await axios.get(url);
         const countryData = response.data;
         const singleCountry = countryData.find(country => country.cca3 === `${req.params.cca3}`);
-        
+
         if (singleCountry) {
             const selectedCountryData = {
                 // id: uuid(),
@@ -94,6 +94,5 @@ app.get("/country/:cca3", async (req, res) => {
 
 app.listen(8080, () => {
     console.log("Listening on port 8080");
-  });
-  
-  
+});
+
