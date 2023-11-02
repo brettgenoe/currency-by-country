@@ -65,9 +65,9 @@ const Homepage = () => {
             </div>
 
             <div className="api-container">
-
-                <p>Euros are equal to {currency.conversion_rates.EUR} USD</p>
-
+                { currency && currency.conversion_rates && (
+                    <p>Euros are equal to {currency.conversion_rates.EUR} USD</p>
+                ) }
             </div>
         </>
 
