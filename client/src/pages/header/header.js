@@ -22,7 +22,7 @@ const Header = () => {
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__US' src={UnitedStates} alt="" /></span> US</a></li>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img  className='header__Canada' src={Canada} alt="" /></span>Canada</a></li>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__Europe' src={Europe} alt="" /></span>Europe</a></li>
-                        <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__UK' src={UK} alt="" /></span>United Kingdom</a></li>
+                        <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__UK' src={UK} alt="" /></span>UK</a></li>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__China' src={China} alt="" /></span>China</a></li>
                     </ul>
                 </nav>
