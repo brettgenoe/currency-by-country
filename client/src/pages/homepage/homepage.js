@@ -85,8 +85,8 @@ const Homepage = () => {
 
                 <div className="converter">
                     <h2 className="converter__title">Travelling takes money... What's in your wallet?</h2>
-                    <p className="converter__description">Here, you can insert how much money you've set aside for travelling, then we'll convert it with ease! We're basically chatGPT!</p>
-
+                    <p className="converter__description">Here you can insert how much money you've set aside for travelling, then we'll convert it with ease! We're basically chatGPT for the new-wave traveller that has a grudge on Google...</p>
+                    <h3>You're Savings:</h3>
                     <input
                         className="converter__input"
                         type="number"

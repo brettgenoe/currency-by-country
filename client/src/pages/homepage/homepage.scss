@@ -5,6 +5,14 @@
 .home {
     &__container {
         margin: 5%;
+
+        @include tablet {
+            margin: (5% 10% 5% 10%);
+        }
+
+        @include desktop {
+            margin: (5% 12.5% 5% 12.5%);
+        }
     }
 
     &__description {
@@ -35,8 +43,18 @@
     border: 5px solid rgba(255, 217, 0, 0.776);
     // display: flex;
     height: 50vw;
-    width: 100;
+    width: 100%;
     background-color: rgb(155, 224, 235);
+
+
+    @include tablet {
+        height: 44vw;
+    }
+
+    @include desktop {
+        height: 40vw;
+    }
+
 }
 
 .image {
@@ -45,11 +63,13 @@
         box-sizing: border-box;
         height: .8rem;
         position: absolute;
-        top: 8vw;
-        left: 15vw;
+        top: 15%;
+        left: 15%;
 
         @include tablet {
             height: 1rem;
+            top: 15%;
+            left: 15%;
         }
 
         @include desktop {
@@ -63,7 +83,7 @@
         height: 0.8rem;
         position: absolute;
         top: 28%;
-        left: 75%;
+        left: 74.5%;
 
         @include tablet {
             height: 1rem;
@@ -71,6 +91,7 @@
 
         @include desktop {
             height: 1.5rem;
+            left: 72%;
         }
     }
 
@@ -111,8 +132,8 @@
         box-sizing: border-box;
         height: 0.8rem;
         position: absolute;
-        top: 25%;
-        left: 15vw;
+        top: 24%;
+        left: 16%;
 
         @include tablet {
             height: 1rem;
@@ -136,19 +157,26 @@
         font-size: 1.2rem;
         text-align: center;
         padding-right: 5%;
+        padding-bottom: 2rem;
         padding-left: 5%;
     }
 
     &__input {
-        margin: (5% 5% 5% 8%);
+        margin: (1.5% 5% 5% 8%);
+        box-sizing: border-box;
         height: 3rem;
         background-image: url("../../images/Dollar_Sign.png");
         background-size: 1rem;
+        margin-right: 1rem;
         padding-left: 1.2rem;
         background-repeat: no-repeat;
         background-position: (.2rem 1rem);
         border-radius: .5rem;
-        background-color: rgba(79, 204, 223, 0.775);
+        border: 2px solid rgba(255, 217, 0, 0.776);
+        background-color: rgba(79, 204, 223, 0.145);
+        font-size: 1.2rem;
+        width: 14rem;
+        text-align: right;
     }
 
 }
