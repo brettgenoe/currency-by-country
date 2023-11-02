@@ -1,19 +1,36 @@
 import "./homepage.scss"
 import Canada from "../../images/Canada.png"
 import China from "../../images/China.png"
-import Europe from "../../images/Europe.png"
+import Italy from "../../images/Italy.png"
 import UnitedStates from "../../images/United_States.png"
 import UK from "../../images/United_Kingdom.webp"
+import India from "../../images/India.png"
+import Russia from "../../images/Russia.png"
+import Brazil from "../../images/Brazil.webp"
+import Argentina from "../../images/Argentina.webp"
+import Japan from "../../images/Japan.svg.png"
+import SouthAfrica from "../../images/SouthAfrica.png"
+import Australia from "../../images/Australia.webp"
+
+
+
 import { useState, useEffect } from "react"
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios';
 
 
 const flagImages = {
+    ARS: Argentina,
+    AUD: Australia,
+    BRL: Brazil,
     CAD: Canada,
     CNY: China,
-    EUR: Europe,
+    EUR: Italy,
     GBP: UK,
+    INR: India,
+    JPY: Japan,
+    RUB: Russia,
+    ZAR: SouthAfrica,
     USD: UnitedStates,
 }
 
@@ -21,10 +38,17 @@ const Homepage = () => {
 
 
     const conversion = {
+        ARS: { countryCode: "ARG" },
+        AUD: { countryCode: "AUS" },
+        BRL: { countryCode: "BRA" },
         CAD: { countryCode: "CAN" },
         CNY: { countryCode: "CHN" },
         EUR: { countryCode: "ITA" },
         GBP: { countryCode: "GBR" },
+        INR: { countryCode: "IND" },
+        JPY: { countryCode: "JPN" },
+        RUB: { countryCode: "RUS" },
+        ZAR: { countryCode: "ZAF" },
         USD: { countryCode: "USA" },
     }
 
@@ -52,7 +76,7 @@ const Homepage = () => {
 
 
     const [currency, setCurrency] = useState(null);
-    const [amountSaved, setAmountSaved] = useState(0);
+    const [amountSaved, setAmountSaved] = useState();
     const [selectedCurrency, setSelectedCurrency] = useState("USD")
     useEffect(() => {
         const getCurrency = async () => {
@@ -95,7 +119,7 @@ const Homepage = () => {
                     Welcome! Currency by Country is a 24
                     hackathon project to provide you
                     with up-to-date currency calculations
-                    for the world traveller.
+                    for the world traveler.
                 </p>
 
                 <h2 className="home__title">So Where Are You Going?</h2>
@@ -125,7 +149,7 @@ const Homepage = () => {
                 <div className="converter">
                     <h2 className="converter__title">Travelling takes money... What's in your wallet?</h2>
                     <p className="converter__description">Here you can insert how much money you've set aside for travelling, then we'll convert it with ease! We're basically chatGPT for the new-wave traveller that has a grudge on Google...</p>
-                    <h3 className="converter__input--title">You're Savings:</h3>
+                    <h3 className="converter__input--title">You've Got Savings:</h3>
                     <div className="converter__input--flex">
                         <input
                             className="converter__input"
@@ -140,32 +164,27 @@ const Homepage = () => {
                             alt={`flag of ${selectedCurrency}`}></img>
                         </div>
 
-                        {/* <select value={selectedCurrency} onChange={handleCurrencyChange}>
-                        {currency && currency.conversion_rates && Object.keys(currency.conversion_rates).map((currencyCode) => (
-                            <option key={currencyCode} value={currencyCode}>
-                                {currencyCode}
-                            </option>
-                        ))}
-                    </select> */}
                         <p className="converter__calc">
-                            Your <b>&#36;{amountSaved} USD</b> is equal to <b>{convertAmount()} {selectedCurrency}</b>!
+                            Your <b>&#36;{amountSaved} USD</b> is equal to {countryData.currency && countryData.currency[selectedCurrency] && countryData.currency[selectedCurrency].symbol || "$"} <b>{convertAmount()} {selectedCurrency}</b>!
                         </p>
                     </div>
                 </div>
                 {countryData.countryName && (
                     <section className="description">
-                        <h3 className="converter__calc--title">Happy Travelling!</h3>
 
                         <h4 className="description__title">Lets find out more about {countryData.countryName}!</h4>
-                        <p>Capital City: Our capital city is {countryData.capitol} </p>
-                        <p>Population: We have {countryData.population} people</p>
-                        <p>Flag: {countryData.flag} </p>
-                        {/* <p>Currency: {countryData.currency[selectedCurrency].name} </p> */}
-                        <p>Where do you drive?: We drive on the <b>{countryData.roadSide}</b> side of the road. </p>
-                        {/* <p>What do they speak?: {countryData.languages}</p> */}
+                        <p className="description__data"><b>Capital City:</b> Our capital city is {countryData.capitol}. </p>
+                        <p className="description__data"><b>Population: </b>We have {countryData.population} people.</p>
+                        {/* <p className="description__data">Flag: {countryData.flag} </p> */}
+                        <p className="description__data"><b>Currency:</b> {countryData.currency && countryData.currency[selectedCurrency] && countryData.currency[selectedCurrency].name || "N/A"}.</p>
+                        <p className="description__data"><b>Where do you drive?:</b> We drive on the <b>{countryData.roadSide}</b> side of the road. </p>
 
                     </section>
+
                 )}
+
+                <h3 className="converter__calc--title">Happy Travelling!</h3>
+
             </main >
 
         </>
