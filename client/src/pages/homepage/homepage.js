@@ -58,30 +58,35 @@ const Homepage = () => {
 
     return (
         <>
-            <p className="description" >
-                Currency by Country is a 24
-                hackathon project to provide you
-                with up-to-date currency calulations
-                for the world traveller.
-            </p>
-            <div className=" background__map">
+            <main className="home__container">
+                <p className="home__description" >
+                    Welcome! Currency by Country is a 24
+                    hackathon project to provide you
+                    with up-to-date currency calulations
+                    for the world traveller.
+                </p>
+
+                <h2 className="home__title">So Where Are You Going?</h2>
+                <div className=" background__map">
 
 
-                {Object.keys(flagImages).map((currencyCode) => (
-                    <div key={currencyCode} className={`country__${currencyCode.toLowerCase()}`}>
-                        <img
-                            className={`image__${currencyCode.toLowerCase()}`}
-                            src={flagImages[currencyCode]}
-                            alt={`flag of ${currencyCode}`}
-                            onClick={() => handleFlagClick(currencyCode)}
-                        />
-                    </div>
-                ))}
+                    {Object.keys(flagImages).map((currencyCode) => (
+                        <div key={currencyCode} className={`country__${currencyCode.toLowerCase()}`}>
+                            <img
+                                className={`image__${currencyCode.toLowerCase()}`}
+                                src={flagImages[currencyCode]}
+                                alt={`flag of ${currencyCode}`}
+                                onClick={() => handleFlagClick(currencyCode)}
+                            />
+                        </div>
+                    ))}
 
-            </div>
+                </div>
 
-            <div className="converter__container">
                 <div className="converter">
+                    <h2 className="converter__title">Travelling takes money... What's in your wallet?</h2>
+                    <p className="converter__description">Here, you can insert how much money you've set aside for travelling, then we'll convert it with ease! We're basically chatGPT!</p>
+
                     <input
                         className="converter__input"
                         type="number"
@@ -90,7 +95,7 @@ const Homepage = () => {
                         placeholder="Enter your savings!"
                     />
 
-                    <div className="selected-flag"> { }  </div>
+                    <div className="converter__flag"> { }  </div>
                     {/* <select value={selectedCurrency} onChange={handleCurrencyChange}>
                         {currency && currency.conversion_rates && Object.keys(currency.conversion_rates).map((currencyCode) => (
                             <option key={currencyCode} value={currencyCode}>
@@ -99,12 +104,13 @@ const Homepage = () => {
                         ))}
                     </select> */}
 
-                    <p>
-                        {amountSaved} USD is equal to {convertAmount()} {selectedCurrency}
+                    <p className="converter__calc">
+                        &#36;{amountSaved} USD is equal to {convertAmount()} {selectedCurrency}
                     </p>
 
                 </div>
-            </div>
+
+            </main>
         </>
 
 
