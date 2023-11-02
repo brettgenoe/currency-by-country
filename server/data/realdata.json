@@ -1,0 +1,83 @@
+{
+    "USA": {
+      "id": "b83eff92-eb6d-4a57-b8d7-9eaf88ee6f82",
+      "countryName": "United States",
+      "currency": {
+        "USD": {
+          "name": "United States dollar",
+          "symbol": "$"
+        }
+      },
+      "capitol": [
+        "Washington, D.C."
+      ],
+      "flag": "🇺🇸",
+      "population": 329484123,
+      "googleMapLink": "https://goo.gl/maps/e8M246zY4BSjkjAv6"
+    },
+    "CAN": {
+        "id": "e4e8bce8-2e69-4510-adc3-391cf41e0cc2",
+        "countryName": "Canada",
+        "currency": {
+          "CAD": {
+            "name": "Canadian dollar",
+            "symbol": "$"
+          }
+        },
+        "capitol": [
+          "Ottawa"
+        ],
+        "flag": "🇨🇦",
+        "population": 38005238,
+        "googleMapLink": "https://goo.gl/maps/jmEVLugreeqiZXxbA"
+    },
+    "CHN": {
+        "id": "05382c64-b4ae-4e49-bc17-72628bc7fc77",
+        "countryName": "China",
+        "currency": {
+        "CNY": {
+            "name": "Chinese yuan",
+            "symbol": "¥"
+        }
+        },
+        "capitol": [
+        "Beijing"
+        ],
+        "flag": "🇨🇳",
+        "population": 1402112000,
+        "googleMapLink": "https://goo.gl/maps/p9qC6vgiFRRXzvGi7"
+        
+      },
+      "ITA": {
+        "id": "a6450b63-cc0e-4f94-a941-f5dfeee2ead0",
+        "countryName": "Italy",
+        "currency": {
+          "EUR": {
+            "name": "Euro",
+            "symbol": "€"
+          }
+        },
+        "capitol": [
+          "Rome"
+        ],
+        "flag": "🇮🇹",
+        "population": 59554023,
+        "googleMapLink": "https://goo.gl/maps/8M1K27TDj7StTRTq8"
+      },
+      "GBR": {
+        "id": "015c10c1-bdf5-4efc-b8b8-93df62f666f6",
+        "countryName": "United Kingdom",
+        "currency": {
+          "GBP": {
+            "name": "British pound",
+            "symbol": "£"
+          }
+        },
+        "capitol": [
+          "London"
+        ],
+        "flag": "🇬🇧",
+        "population": 67215293,
+        "googleMapLink": "https://goo.gl/maps/FoDtc3UKMkFsXAjHA"
+      }
+  }

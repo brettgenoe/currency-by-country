@@ -1,0 +1,18 @@
+{
+  "selectedCountryData": {
+    "id": "015c10c1-bdf5-4efc-b8b8-93df62f666f6",
+    "countryName": "United Kingdom",
+    "currency": {
+      "GBP": {
+        "name": "British pound",
+        "symbol": "£"
+      }
+    },
+    "capitol": [
+      "London"
+    ],
+    "flag": "🇬🇧",
+    "population": 67215293,
+    "googleMapLink": "https://goo.gl/maps/FoDtc3UKMkFsXAjHA"
+  }
+}
