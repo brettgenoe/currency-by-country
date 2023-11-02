@@ -105,7 +105,7 @@ const Homepage = () => {
                     </select> */}
                     <h3 className="converter__calc--title">Happy Travelling!</h3>
                     <p className="converter__calc">
-                        Your &#36;{amountSaved} USD is equal to {convertAmount()} {selectedCurrency}!
+                        Your <b>&#36;{amountSaved} USD</b> is equal to <b>{convertAmount()} {selectedCurrency}</b>!
                     </p>
 
                 </div>
