@@ -4,8 +4,27 @@ import China from "../../images/China.png"
 import Europe from "../../images/Europe.png"
 import UnitedStates from "../../images/United_States.png"
 import UK from "../../images/United_Kingdom.webp"
+import { useState, useEffect } from "react"
+import axios from 'axios';
 
 const Homepage = () => {
+
+    const [currency, setCurrency] = useState(null)
+
+    useEffect(() => {
+
+        const getCurrency = async () => {
+            try {
+                const { data } = await axios.get(`http://localhost:8080/currency-usd`)
+                console.log(data);
+                setCurrency(data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getCurrency()
+    }, [])
+
 
     return (
         <>
@@ -43,7 +62,11 @@ const Homepage = () => {
                     src={UnitedStates}
                     alt="map of United States">
                 </img></div>
+            </div>
 
+            <div className="api-container">
+
+                <p>Euros are equal to {currency.conversion_rates.EUR} USD</p>
 
             </div>
         </>
