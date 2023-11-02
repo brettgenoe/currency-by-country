@@ -5,8 +5,9 @@ import Europe from "../../images/Europe.png"
 import UnitedStates from "../../images/United_States.png"
 import UK from "../../images/United_Kingdom.webp"
 import { useState, useEffect } from "react"
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import axios from 'axios';
+
 
 const flagImages = {
     CAD: Canada,
@@ -15,16 +16,27 @@ const flagImages = {
     GBP: UK,
     USD: UnitedStates,
 }
+
 const Homepage = () => {
 
 
+    const conversion = {
+        CAD: { countryCode: "CAN" },
+        CNY: { countryCode: "CHN" },
+        EUR: { countryCode: "ITA" },
+        GBP: { countryCode: "GBR" },
+        USD: { countryCode: "USA" },
+    }
+
 
     const { cca3 } = useParams();
-    const [ countryData, setCountryData] = useState({})
+    const [countryData, setCountryData] = useState({})
 
- 
+
 
     useEffect(() => {
+
+
         const getCountryCode = async () => {
             try {
                 const { data } = await axios.get(`http://localhost:8080/country/${cca3}`);
@@ -73,6 +85,7 @@ const Homepage = () => {
     const handleFlagClick = (currencyCode) => {
         setSelectedCurrency(currencyCode);
     }
+
     return (
         <>
 
@@ -89,16 +102,23 @@ const Homepage = () => {
                 <div className=" background__map">
 
 
-                    {Object.keys(flagImages).map((currencyCode) => (
-                        <div key={currencyCode} className={`country__${currencyCode.toLowerCase()}`}>
-                            <img
-                                className={`image__${currencyCode.toLowerCase()}`}
-                                src={flagImages[currencyCode]}
-                                alt={`flag of ${currencyCode}`}
-                                onClick={() => handleFlagClick(currencyCode)}
-                            />
-                        </div>
-                    ))}
+                    {Object.keys(flagImages).map((currencyCode) => {
+                        const countryData = conversion[currencyCode];
+                        const countryCode = countryData.countryCode;
+
+                        return (
+                            <Link to={`/country/${countryCode}`} key={currencyCode}>
+                                <div key={currencyCode} className={`country__${currencyCode.toLowerCase()}`}>
+                                    <img
+                                        className={`image__${currencyCode.toLowerCase()}`}
+                                        src={flagImages[currencyCode]}
+                                        alt={`flag of ${currencyCode}`}
+                                        onClick={() => handleFlagClick(currencyCode)}
+                                    />
+                                </div>
+                            </Link>
+                        );
+                    })}
 
                 </div>
 
@@ -117,26 +137,35 @@ const Homepage = () => {
 
                         <div > <img className="converter__flag"
                             src={flagImages[selectedCurrency]}
-                            alt={`flag of ${selectedCurrency}`}></img>  </div></div>
+                            alt={`flag of ${selectedCurrency}`}></img>
+                        </div>
 
-                    {/* <select value={selectedCurrency} onChange={handleCurrencyChange}>
+                        {/* <select value={selectedCurrency} onChange={handleCurrencyChange}>
                         {currency && currency.conversion_rates && Object.keys(currency.conversion_rates).map((currencyCode) => (
                             <option key={currencyCode} value={currencyCode}>
                                 {currencyCode}
                             </option>
                         ))}
                     </select> */}
-
-
-                    <h3 className="converter__calc--title">Happy Travelling!</h3>
-                    <p className="converter__calc">
-                        Your <b>&#36;{amountSaved} USD</b> is equal to <b>{convertAmount()} {selectedCurrency}</b>!
-                    </p>
-                       <p>{countryData.countryName}</p>
-
+                        <p className="converter__calc">
+                            Your <b>&#36;{amountSaved} USD</b> is equal to <b>{convertAmount()} {selectedCurrency}</b>!
+                        </p>
+                    </div>
                 </div>
+                <section className="description">
+                    <h3 className="converter__calc--title">Happy Travelling!</h3>
 
-            </main>
+                    <h4 className="description__title">Lets find out more about {countryData.countryName}!</h4>
+                    <p>Capital City: Our capital city is {countryData.capitol} </p>
+                    <p>Population: We have {countryData.population} people</p>
+                    <p>Flag: {countryData.flag} </p>
+                    <p>Currency: {countryData.currency[selectedCurrency].symbol} </p>
+                    <p>Where do you drive?: We drive on the <b>{countryData.roadSide}</b> side of the road. </p>
+                    {/* <p>Waht do they speak?: {countryData.languages}</p> */}
+
+                </section>
+
+            </main >
 
         </>
     )

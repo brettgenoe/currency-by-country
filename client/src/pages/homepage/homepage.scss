@@ -8,11 +8,11 @@
         background-color: rgb(229, 247, 209);
 
         @include tablet {
-            margin: (5% 10% 5% 10%);
+            padding: (5% 10% 5% 10%);
         }
 
         @include desktop {
-            margin: (5% 12.5% 5% 12.5%);
+            padding: (5% 12.5% 5% 12.5%);
         }
     }
 
@@ -68,13 +68,13 @@
 }
 
 .image {
-	&__cad {
-		box-sizing: border-box;
-		height: 1rem;
-		position: absolute;
-		top: 8vw;
-		left: 15vw;
-	}
+    &__cad {
+        box-sizing: border-box;
+        height: 1rem;
+        position: absolute;
+        top: 8vw;
+        left: 15vw;
+    }
 
 
     &__cad {
@@ -180,6 +180,7 @@
 
     &__flag {
         height: 2rem;
+        padding-top: 1rem;
     }
 
     &__description {
@@ -222,12 +223,12 @@
         font-weight: 500;
         font-size: 1.5rem;
         text-align: center;
-
+        margin-top: .35rem;
+        margin-left: 5%;
 
         &--title {
-            padding-bottom: 1rem;
+            padding-top: 1rem;
             text-align: center;
         }
     }
 }
-
