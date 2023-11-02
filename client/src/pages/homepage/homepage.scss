@@ -1,10 +1,70 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/reset.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.home {
+    &__container {
+        padding: 5%;
+        background-color: rgb(229, 247, 209);
+
+        @include tablet {
+            margin: (5% 10% 5% 10%);
+        }
+
+        @include desktop {
+            margin: (5% 12.5% 5% 12.5%);
+        }
+    }
+
+    &__description {
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: $primary-text;
+        padding: (0rem 5% 0rem 5%);
+        font-weight: 700;
+        font-size: 1.25rem;
+        padding-bottom: 2rem;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: $primary-text;
+        text-align: center;
+        padding-bottom: 1rem;
+        font-family: cursive;
+
+        @include tablet {
+            text-align: left;
+            margin-left: 15%;
+            font-size: 1.75rem;
+        }
+    }
+}
+
 .background__map {
-	background-image: url("../../images/worldmap.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	height: 50vw;
-	width: 100vw;
-	background-color: lightcyan;
+
+    background-image: url("../../images/worldmap.png");
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-size: contain;
+    position: relative;
+    border-radius: 20%;
+    border: 5px solid rgba(255, 217, 0, 0.776);
+    // display: flex;
+    height: 50vw;
+    width: 100%;
+    background-color: rgb(155, 224, 235);
+
+
+    @include tablet {
+        height: 44vw;
+    }
+
+    @include desktop {
+        height: 40vw;
+    }
+
+
 }
 
 .image {
@@ -16,35 +76,158 @@
 		left: 15vw;
 	}
 
-	&__cny {
-		box-sizing: border-box;
-		height: 1rem;
-		position: absolute;
-		top: 40%;
-		left: 60%;
-	}
 
-	&__eur {
-		box-sizing: border-box;
-		height: 1rem;
-		position: absolute;
-		top: 23%;
-		left: 45%;
-	}
+    &__cad {
+        box-sizing: border-box;
+        height: .8rem;
+        position: absolute;
+        top: 15%;
+        left: 15%;
 
-	&__gbp {
-		box-sizing: border-box;
-		height: 1rem;
-		position: relative;
-		top: 30%;
-		left: 40%;
-	}
+        @include tablet {
+            height: 1rem;
+            top: 15%;
+            left: 15%;
+        }
 
-	&__usd {
-		box-sizing: border-box;
-		height: 1rem;
-		position: relative;
-		top: 3vw;
-		left: 15vw;
-	}
+        @include desktop {
+            height: 1.5rem;
+        }
+
+    }
+
+    &__cny {
+        box-sizing: border-box;
+        height: 0.8rem;
+        position: absolute;
+        top: 28%;
+        left: 74.5%;
+
+        @include tablet {
+            height: 1rem;
+        }
+
+        @include desktop {
+            height: 1.5rem;
+            left: 72%;
+        }
+    }
+
+    &__eur {
+        box-sizing: border-box;
+        height: 0.8rem;
+        position: absolute;
+        top: 21%;
+        left: 48%;
+
+        @include tablet {
+            height: 1rem;
+        }
+
+        @include desktop {
+            height: 1.5rem;
+        }
+    }
+
+    &__gbp {
+        box-sizing: border-box;
+        height: 0.8rem;
+
+        position: absolute;
+        top: 15%;
+        left: 44%;
+
+        @include tablet {
+            height: 1rem;
+        }
+
+        @include desktop {
+            height: 1.5rem;
+        }
+    }
+
+    &__usd {
+        box-sizing: border-box;
+        height: 0.8rem;
+        position: absolute;
+        top: 24%;
+        left: 16%;
+
+        @include tablet {
+            height: 1rem;
+        }
+
+        @include desktop {
+            height: 1.5rem;
+        }
+    }
 }
+
+.converter {
+    &__title {
+        font-size: 1.25rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 2rem;
+        color: $secondary-text;
+        font-family: cursive;
+
+        @include tablet {
+            margin-left: 10%;
+            font-size: 1.35rem;
+        }
+    }
+
+    &__flag {
+        height: 2rem;
+    }
+
+    &__description {
+        font-size: 1.2rem;
+        text-align: center;
+        padding-right: 5%;
+        padding-bottom: 2rem;
+        padding-left: 5%;
+        color: $secondary-text;
+        font-weight: 500;
+    }
+
+    &__input {
+        margin: (1.5% 5% 2.5%% 8%);
+        box-sizing: border-box;
+        height: 3rem;
+        background-image: url("../../images/Dollar_Sign.png");
+        background-size: 1rem;
+        padding-right: 1rem;
+        padding-left: 1.2rem;
+        background-repeat: no-repeat;
+        background-position: (.2rem .9rem);
+        border-radius: .5rem;
+        border: 2px solid rgba(255, 217, 0, 0.776);
+        background-color: rgba(79, 204, 223, 0.145);
+        font-size: 1.2rem;
+        width: 10rem;
+        text-align: right;
+
+        &--title {
+            margin-left: 5%;
+        }
+
+        &--flex {
+            display: flex;
+        }
+    }
+
+    &__calc {
+        font-weight: 500;
+        font-size: 1.5rem;
+        text-align: center;
+
+
+        &--title {
+            padding-bottom: 1rem;
+            text-align: center;
+        }
+    }
+}
+
