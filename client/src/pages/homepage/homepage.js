@@ -116,7 +116,7 @@ const Homepage = () => {
 
             <main className="home__container">
                 <p className="home__description" >
-                    Welcome! Currency by Country is a 24
+                    Welcome! Currency by Country is a 24 hour
                     hackathon project to provide you
                     with up-to-date currency calculations
                     for the world traveler.
