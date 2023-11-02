@@ -25,7 +25,7 @@ const Header = () => {
                 <nav class="header__navbar">
                     <ul>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={UnitedStates} alt="" /></span> US</a></li>
-                        <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img  className='header__flag' src={Canada} alt="" /></span>Canada</a></li>
+                        <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={Canada} alt="" /></span>Canada</a></li>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={Europe} alt="" /></span>Europe</a></li>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={UK} alt="" /></span>UK</a></li>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={China} alt="" /></span>China</a></li>
@@ -42,7 +42,7 @@ const Header = () => {
                 <h1 className="header__title" >Welcome to <span className='header__euro'>&euro;</span> by C</h1>
             </header>
 
-            
+
         </>
     )
 
