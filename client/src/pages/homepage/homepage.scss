@@ -67,13 +67,75 @@
 
 }
 
+// const flagImages = {
+//     ARS: Argentina,
+//     AUD: Australia,
+//     BRL: Brazil,
+//     CAD: Canada,
+//     CNY: China,
+//     EUR: Europe,
+//     GBP: UK,
+//     INR: India,
+//     JPY: Japan,
+//     RUB: Russia,
+//     ZAR: SouthAfrica,
+//     USD: UnitedStates,
+// }
+
+
 .image {
-    &__cad {
+
+    &__ars {
         box-sizing: border-box;
-        height: 1rem;
+        height: .8rem;
         position: absolute;
-        top: 8vw;
-        left: 15vw;
+        top: 69%;
+        left: 29%;
+
+        @include tablet {
+            height: 1rem;
+        }
+
+        @include desktop {
+            height: 1.5rem;
+        }
+
+    }
+
+
+    &__aud {
+        box-sizing: border-box;
+        height: .8rem;
+        position: absolute;
+        top: 62%;
+        left: 81%;
+
+        @include tablet {
+            height: 1rem;
+        }
+
+        @include desktop {
+            height: 1.5rem;
+        }
+
+    }
+
+
+    &__brl {
+        box-sizing: border-box;
+        height: .8rem;
+        position: absolute;
+        top: 55%;
+        left: 32%;
+
+        @include tablet {
+            height: 1rem;
+        }
+
+        @include desktop {
+            height: 1.5rem;
+        }
+
     }
 
 
@@ -145,6 +207,72 @@
             height: 1.5rem;
         }
     }
+
+    &__inr {
+        box-sizing: border-box;
+        height: .8rem;
+        position: absolute;
+        top: 37%;
+        left: 66.5%;
+
+        @include tablet {
+            height: 1rem;
+        }
+
+        @include desktop {
+            height: 1.5rem;
+        }
+
+    }
+
+    &__jpy {
+        box-sizing: border-box;
+        height: .8rem;
+        position: absolute;
+        top: 26%;
+        left: 83%;
+
+        @include tablet {
+            height: 1rem;
+        }
+
+        @include desktop {
+            height: 1.5rem;
+        }
+    }
+
+    &__rub {
+        box-sizing: border-box;
+        height: .8rem;
+        position: absolute;
+        top: 10%;
+        left: 69%;
+
+        @include tablet {
+            height: 1rem;
+        }
+
+        @include desktop {
+            height: 1.5rem;
+        }
+    }
+
+    &__zar {
+        box-sizing: border-box;
+        height: .8rem;
+        position: absolute;
+        top: 65%;
+        left: 52%;
+
+        @include tablet {
+            height: 1rem;
+        }
+
+        @include desktop {
+            height: 1.5rem;
+        }
+    }
+
 
     &__usd {
         box-sizing: border-box;

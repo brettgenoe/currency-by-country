@@ -4,16 +4,33 @@ import China from "../../images/China.png"
 import Europe from "../../images/Europe.png"
 import UnitedStates from "../../images/United_States.png"
 import UK from "../../images/United_Kingdom.webp"
+import India from "../../images/India.png"
+import Russia from "../../images/Russia.png"
+import Brazil from "../../images/Brazil.webp"
+import Argentina from "../../images/Argentina.webp"
+import Japan from "../../images/Japan.svg.png"
+import SouthAfrica from "../../images/SouthAfrica.png"
+import Australia from "../../images/Australia.webp"
+
+
+
 import { useState, useEffect } from "react"
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios';
 
 
 const flagImages = {
+    ARS: Argentina,
+    AUD: Australia,
+    BRL: Brazil,
     CAD: Canada,
     CNY: China,
     EUR: Europe,
     GBP: UK,
+    INR: India,
+    JPY: Japan,
+    RUB: Russia,
+    ZAR: SouthAfrica,
     USD: UnitedStates,
 }
 
@@ -21,10 +38,17 @@ const Homepage = () => {
 
 
     const conversion = {
+        ARS: { countryCode: "ARG" },
+        AUD: { countryCode: "AUS" },
+        BRL: { countryCode: "BRA" },
         CAD: { countryCode: "CAN" },
         CNY: { countryCode: "CHN" },
         EUR: { countryCode: "ITA" },
         GBP: { countryCode: "GBR" },
+        INR: { countryCode: "IND" },
+        JPY: { countryCode: "JPN" },
+        RUB: { countryCode: "RUS" },
+        ZAR: { countryCode: "ZAF" },
         USD: { countryCode: "USA" },
     }
 
