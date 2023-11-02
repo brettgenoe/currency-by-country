@@ -1,51 +1,50 @@
 .background__map {
-    background-image: url("../../images/worldmap.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 50vw;
-    width: 100vw;
-    background-color: lemonchiffon;
+	background-image: url("../../images/worldmap.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 50vw;
+	width: 100vw;
+	background-color: lightcyan;
 }
 
 .image {
+	&__cad {
+		box-sizing: border-box;
+		height: 1rem;
+		position: absolute;
+		top: 8vw;
+		left: 15vw;
+	}
 
-    &__canada {
-        box-sizing: border-box;
-        height: 1rem;
-        position: relative;
-        top: 8vw;
-        left: 15vw;
-    }
+	&__cny {
+		box-sizing: border-box;
+		height: 1rem;
+		position: absolute;
+		top: 40%;
+		left: 60%;
+	}
 
-    &__china {
-        box-sizing: border-box;
-        height: 1rem;
-        position: relative;
-        top: 12vw;
-        left: 66vw;
-    }
+	&__eur {
+		box-sizing: border-box;
+		height: 1rem;
+		position: absolute;
+		top: 23%;
+		left: 45%;
+	}
 
-    &__europe {
-        box-sizing: border-box;
-        height: 1rem;
-        position: relative;
-        top: 4vw;
-        left: 45vw;
-    }
+	&__gbp {
+		box-sizing: border-box;
+		height: 1rem;
+		position: relative;
+		top: 30%;
+		left: 40%;
+	}
 
-    &__uk {
-        box-sizing: border-box;
-        height: 1rem;
-        position: relative;
-        top: 1vw;
-        left: 38vw;
-    }
-
-    &__us {
-        box-sizing: border-box;
-        height: 1rem;
-        position: relative;
-        top: 3vw;
-        left: 15vw;
-    }
+	&__usd {
+		box-sizing: border-box;
+		height: 1rem;
+		position: relative;
+		top: 3vw;
+		left: 15vw;
+	}
 }
