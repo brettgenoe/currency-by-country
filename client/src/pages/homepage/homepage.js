@@ -14,12 +14,9 @@ const flagImages = {
     EUR: Europe,
     GBP: UK,
     USD: UnitedStates,
-
 }
-
-
-
 const Homepage = () => {
+
 
 
     const { cca3 } = useParams();
@@ -41,12 +38,11 @@ const Homepage = () => {
     }, [cca3]);
 
 
+
     const [currency, setCurrency] = useState(null);
     const [amountSaved, setAmountSaved] = useState(0);
     const [selectedCurrency, setSelectedCurrency] = useState("USD")
-
     useEffect(() => {
-
         const getCurrency = async () => {
             try {
                 const { data } = await axios.get(`http://localhost:8080/currency-usd`)
@@ -64,7 +60,6 @@ const Homepage = () => {
     const handleAmountChange = (event) => {
         setAmountSaved(event.target.value);
     }
-
     const handleCurrencyChange = (event) => {
         setSelectedCurrency(event.target.value);
     }
@@ -78,10 +73,9 @@ const Homepage = () => {
     const handleFlagClick = (currencyCode) => {
         setSelectedCurrency(currencyCode);
     }
-
-
     return (
         <>
+
 
             <main className="home__container">
                 <p className="home__description" >
@@ -133,20 +127,44 @@ const Homepage = () => {
                         ))}
                     </select> */}
 
+
                     <h3 className="converter__calc--title">Happy Travelling!</h3>
                     <p className="converter__calc">
                         Your <b>&#36;{amountSaved} USD</b> is equal to <b>{convertAmount()} {selectedCurrency}</b>!
                     </p>
                        <p>{countryData.countryName}</p>
+
                 </div>
 
             </main>
 
         </>
-
-
     )
-
 }
-
 export default Homepage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
