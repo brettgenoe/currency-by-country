@@ -13,7 +13,9 @@ app.use(cors({ origin: "http://localhost:3001" }));
 // app.get("/currency-usd", async (req, res) => {
 
 //     url = "https://v6.exchangerate-api.com/v6/54d79f5447761709d2c1ff6b/latest/USD"
+
 //     try {
+
 
 //         const response = await axios.get(`${url}`);
 //         const currencyData = response.data;
