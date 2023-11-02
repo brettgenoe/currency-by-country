@@ -1,0 +1,35 @@
+{
+  "id": "c953e008-705e-48cb-a7e6-c9282da29ab8",
+  "countryName": "China",
+  "countryCode": "CHN",
+  "currency": {
+    "CNY": {
+      "name": "Chinese yuan",
+      "symbol": "¥"
+    }
+  },
+  "capitol": [
+    "Beijing"
+  ],
+  "flag": "🇨🇳",
+  "population": 1402112000,
+  "googleMapLink": "https://goo.gl/maps/p9qC6vgiFRRXzvGi7",
+  "roadSide": "right",
+  "selectedCountryData": {
+    "countryName": "Bulgaria",
+    "countryCode": "BGR",
+    "currency": {
+      "BGN": {
+        "name": "Bulgarian lev",
+        "symbol": "лв"
+      }
+    },
+    "capitol": [
+      "Sofia"
+    ],
+    "flag": "🇧🇬",
+    "population": 6927288,
+    "googleMapLink": "https://goo.gl/maps/F5uAhDGWzc3BrHfm9",
+    "roadSide": "right"
+  }
+}
