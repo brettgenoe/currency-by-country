@@ -62,7 +62,7 @@ const Homepage = () => {
                 <p className="home__description" >
                     Welcome! Currency by Country is a 24
                     hackathon project to provide you
-                    with up-to-date currency calulations
+                    with up-to-date currency calculations
                     for the world traveller.
                 </p>
 
@@ -86,16 +86,19 @@ const Homepage = () => {
                 <div className="converter">
                     <h2 className="converter__title">Travelling takes money... What's in your wallet?</h2>
                     <p className="converter__description">Here you can insert how much money you've set aside for travelling, then we'll convert it with ease! We're basically chatGPT for the new-wave traveller that has a grudge on Google...</p>
-                    <h3>You're Savings:</h3>
-                    <input
-                        className="converter__input"
-                        // type="number"
-                        value={amountSaved}
-                        onChange={handleAmountChange}
-                        placeholder="Enter here!"
-                    />
+                    <h3 className="converter__input--title">You're Savings:</h3>
+                    <div className="converter__input--flex">
+                        <input
+                            className="converter__input"
+                            // type="number"
+                            value={amountSaved}
+                            onChange={handleAmountChange}
+                            placeholder="Enter here!"
+                        />
 
-                    <div className="converter__flag"> { }  </div>
+                        <div > <img className="converter__flag"
+                            src={flagImages[selectedCurrency]}
+                            alt={`flag of ${selectedCurrency}`}></img>  </div></div>
                     {/* <select value={selectedCurrency} onChange={handleCurrencyChange}>
                         {currency && currency.conversion_rates && Object.keys(currency.conversion_rates).map((currencyCode) => (
                             <option key={currencyCode} value={currencyCode}>
