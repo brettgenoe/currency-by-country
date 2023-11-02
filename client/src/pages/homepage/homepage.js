@@ -5,6 +5,7 @@ import Europe from "../../images/Europe.png"
 import UnitedStates from "../../images/United_States.png"
 import UK from "../../images/United_Kingdom.webp"
 import { useState, useEffect } from "react"
+import { useParams } from 'react-router-dom'
 import axios from 'axios';
 
 const flagImages = {
@@ -19,6 +20,26 @@ const flagImages = {
 
 
 const Homepage = () => {
+
+
+    const { cca3 } = useParams();
+    const [ countryData, setCountryData] = useState({})
+
+ 
+
+    useEffect(() => {
+        const getCountryCode = async () => {
+            try {
+                const { data } = await axios.get(`http://localhost:8080/country/${cca3}`);
+                console.log(data);
+                setCountryData(data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getCountryCode(cca3 || "USA")
+    }, [cca3]);
+
 
     const [currency, setCurrency] = useState(null);
     const [amountSaved, setAmountSaved] = useState(0);
@@ -37,6 +58,9 @@ const Homepage = () => {
         }
         getCurrency()
     }, [])
+
+
+
     const handleAmountChange = (event) => {
         setAmountSaved(event.target.value);
     }
@@ -58,6 +82,7 @@ const Homepage = () => {
 
     return (
         <>
+
             <main className="home__container">
                 <p className="home__description" >
                     Welcome! Currency by Country is a 24
@@ -99,6 +124,7 @@ const Homepage = () => {
                         <div > <img className="converter__flag"
                             src={flagImages[selectedCurrency]}
                             alt={`flag of ${selectedCurrency}`}></img>  </div></div>
+
                     {/* <select value={selectedCurrency} onChange={handleCurrencyChange}>
                         {currency && currency.conversion_rates && Object.keys(currency.conversion_rates).map((currencyCode) => (
                             <option key={currencyCode} value={currencyCode}>
@@ -106,14 +132,16 @@ const Homepage = () => {
                             </option>
                         ))}
                     </select> */}
+
                     <h3 className="converter__calc--title">Happy Travelling!</h3>
                     <p className="converter__calc">
                         Your <b>&#36;{amountSaved} USD</b> is equal to <b>{convertAmount()} {selectedCurrency}</b>!
                     </p>
-
+                       <p>{countryData.countryName}</p>
                 </div>
 
             </main>
+
         </>
 
 

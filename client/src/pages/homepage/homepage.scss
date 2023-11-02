@@ -42,6 +42,7 @@
 }
 
 .background__map {
+
     background-image: url("../../images/worldmap.png");
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -63,9 +64,18 @@
         height: 40vw;
     }
 
+
 }
 
 .image {
+	&__cad {
+		box-sizing: border-box;
+		height: 1rem;
+		position: absolute;
+		top: 8vw;
+		left: 15vw;
+	}
+
 
     &__cad {
         box-sizing: border-box;
@@ -220,3 +230,4 @@
         }
     }
 }
+
