@@ -18,11 +18,11 @@
 
     &__description {
         text-align: center;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         color: $primary-text;
         padding: (0rem 5% 0rem 5%);
         font-weight: 700;
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         padding-bottom: 2rem;
     }
 
@@ -88,6 +88,7 @@
 
         @include desktop {
             height: 1.5rem;
+            left: 27%;
         }
 
     }
@@ -110,6 +111,7 @@
 
         @include desktop {
             height: 1.5rem;
+            left: 79%;
         }
 
     }
@@ -132,6 +134,7 @@
 
         @include desktop {
             height: 1.5rem;
+            left: 30%;
         }
 
     }
@@ -239,6 +242,7 @@
 
         @include desktop {
             height: 1.5rem;
+            left: 64%;
         }
 
     }
@@ -260,6 +264,7 @@
 
         @include desktop {
             height: 1.5rem;
+            left: 80%;
         }
     }
 
@@ -300,6 +305,8 @@
 
         @include desktop {
             height: 1.5rem;
+            top: 63%;
+            left: 50%;
         }
     }
 
@@ -327,7 +334,7 @@
 
 .converter {
     &__title {
-        font-size: 1.25rem;
+        font-size: 1.35rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
         padding-left: 2rem;
@@ -336,13 +343,21 @@
 
         @include tablet {
             margin-left: 10%;
-            font-size: 1.35rem;
+            font-size: 1.5rem;
+        }
+
+        @include desktop {
+            font-size: 1.75rem;
         }
     }
 
     &__flag {
         height: 2rem;
         padding-top: 1rem;
+
+        @include tablet {
+            padding-top: 1.25rem;
+        }
     }
 
     &__description {
@@ -353,6 +368,12 @@
         padding-left: 5%;
         color: $secondary-text;
         font-weight: 500;
+
+        @include tablet {
+            font-size: 1.5rem;
+        }
+
+
     }
 
     &__input {
@@ -391,6 +412,14 @@
         margin-top: 0rem;
         margin-left: 5%;
 
+        @include tablet {
+            padding-top: 1.35rem;
+        }
+
+        @include desktop {
+            padding-top: 1.35rem;
+        }
+
         &--title {
             padding-top: 1rem;
             text-align: center;
@@ -406,14 +435,14 @@
     padding-left: 5%;
 
     &__title {
-        font-size: 1.5rem;
+        font-size: 1.55rem;
         padding-bottom: 1rem;
         padding-top: 1rem;
 
     }
 
     &__data {
-        font-size: 1.25;
+        font-size: 1.25rem;
         line-height: 2;
     }
 
