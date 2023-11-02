@@ -76,7 +76,7 @@ const Homepage = () => {
 
 
     const [currency, setCurrency] = useState(null);
-    const [amountSaved, setAmountSaved] = useState();
+    const [amountSaved, setAmountSaved] = useState(1);
     const [selectedCurrency, setSelectedCurrency] = useState("USD")
     useEffect(() => {
         const getCurrency = async () => {

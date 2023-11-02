@@ -2,7 +2,7 @@ import './header.scss'
 import Logo from '../../images/cbc-logo.png'
 import Canada from "../../images/Canada.png"
 import China from "../../images/China.png"
-import Europe from "../../images/Europe.png"
+import Italy from "../../images/Italy.png"
 import UnitedStates from "../../images/United_States.png"
 import UK from "../../images/United_Kingdom.webp"
 import India from '../../images/India.png'
@@ -12,6 +12,7 @@ import Argentina from '../../images/Argentina.webp'
 import Japan from '../../images/Japan.svg.png'
 import SouthAfrica from '../../images/SouthAfrica.png'
 import Australia from '../../images/Australia.webp'
+import { useParams, NavLink } from 'react-router-dom'
 
 
 const Header = () => {
@@ -19,14 +20,14 @@ const Header = () => {
     return (
         <>
             <header className="header">
-
-                <img className='header__logo' src={Logo} alt="logo" />
-
+                <NavLink to="/" >
+                    <img className='header__logo' src={Logo} alt="logo" />
+                </NavLink>
                 <nav class="header__navbar">
                     <ul>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={UnitedStates} alt="" /></span> US</a></li>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={Canada} alt="" /></span>Canada</a></li>
-                        <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={Europe} alt="" /></span>Europe</a></li>
+                        <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={Italy} alt="" /></span>Italy</a></li>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={UK} alt="" /></span>UK</a></li>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={China} alt="" /></span>China</a></li>
                         <li class="header__navbar--item"><a class="header__navbar--item--link" href=""><span><img className='header__flag' src={India} alt="" /></span>India</a></li>

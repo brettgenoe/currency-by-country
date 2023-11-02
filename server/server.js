@@ -4,7 +4,6 @@ const app = express();
 const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
-// const { v4: uuid } = require("uuid");
 app.use(express.json());
 
 app.use(cors({ origin: "http://localhost:3001" }));
@@ -26,23 +25,6 @@ app.get("/currency-usd", async (req, res) => {
         res.status(500).json({ error: "failed to fetch data" });
     }
 });
-
-
-// app.get("/country-data", async (req, res) => {
-
-//     url = "https://restcountries.com/v3.1/all"
-//     try {
-//         const response = await axios.get(`${url}`);
-//         const countryData = response.data;
-//         // const parsedCurrencyData = JSON.parse(countryData);
-//         res.json(countryData);
-
-//     } catch (error) {
-//         res.status(500).json({ error: "failed to fetch data" });
-
-//     }
-// });
-
 
 
 app.get("/country/:cca3", async (req, res) => {
